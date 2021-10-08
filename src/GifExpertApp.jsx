@@ -6,11 +6,6 @@ export const GifExpertApp = () => {
 
     const [categorias, setCategorias] = useState([]);
 
-    /*const handleAdd = () => {
-        setCategorias(['Risas', ...categorias]);
-        setCategorias( cats => [...cats, 'Nueva Categoria']);
-    }*/
-
     return (
         <>
         <div>
@@ -23,10 +18,11 @@ export const GifExpertApp = () => {
 
         <ol>
         { 
-          categorias.map( indice => {
-              return <GifGrid key={indice}>
-                          <p>{indice}</p>
-                    </GifGrid>
+          categorias.map( category => {
+              return <GifGrid 
+                        key={category}
+                        category={category}
+                    />
           })
         }
 
